@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from calculator.models import Consumer
+import openpyxl
 
 # TODO: Your list view should do the following tasks
 """
@@ -11,7 +13,31 @@ from django.shortcuts import render
 
 def view1(request):
     # Create the first view here.
-    pass
+    # consumers = Consumer.objects.all()
+    # return render(request, "calculator/list.html", {'consumers': consumers})
+
+    # workbook = openpyxl.load_workbook("consumers.xlsx")
+    # sheet = workbook["Sheet1"]
+
+    # for row in sheet.iter_rows(min_row=2,values_only=True):
+    #     consumer = Consumer(
+    #         name=row[1],
+    #         document=row[2],
+    #         city=row[3],
+    #         state=row[4],
+    #         consumption=row[5],
+    #         distributor_tax=row[8],
+    #     )
+    #     consumer.save()
+
+    consumers = Consumer.objects.all()
+    return render(request, "calculator/list.html", {'consumers': consumers})
+
+
+
+
+
+
 
 
 # TODO: Your create view should do the following tasks
