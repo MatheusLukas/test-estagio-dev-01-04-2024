@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-primary text-white flex items-center justify-center rounded-md"
+  >
+    <div class="flex justify-center">
+      <form
+        method="post"
+        class="w-96 flex flex-col p-6 border-secondary border gap-2 rounded-md"
+      >
+        {% csrf_token %} {{form}}
+        <button class="w-full bg-secondary rounded-md py-2" type="submit">
+          Calcular
+        </button>
+      </form>
+      {% if result %}
+      <div
+        class="w-96 h-fit flex flex-col p-6 border-secondary border gap-3 rounded-md min-h-[470px]"
+      >
+        <h1 class="text-4xl font-bold">Calculo</h1>
+        <div>
+          <p>Economia Anual:</p>
+          <p>R${{annual_savings}}</p>
+        </div>
+        <div>
+          <p>Economia Mensal:</p>
+          <p>R${{monthly_savings}}</p>
+        </div>
+        <div>
+          <p>Desconto Aplicado:</p>
+          <p>R${{discount_rate}}</p>
+        </div>
+        <div>
+          <p>Cobertura:</p>
+          <p>R${{coverage}}</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </body>
+</html>

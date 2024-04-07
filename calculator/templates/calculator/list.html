@@ -45,23 +45,27 @@ TODO: You must provide 2 selects to filter the rows based in:
         <tr>
           <th>Nome</th>
           <th>Documento</th>
-          <th>Consumo</th>
           <th>Cidade</th>
           <th>Estado</th>
           <th>Consumo</th>
-          <th>Tarifa</th>
+          <th>Tipo</th>
+          <th>Cobertura</th>
+          <th>Tarifa de distribuição</th>
+          <th>Desconto</th>
         </tr>
       </thead>
       <tbody>
-        {% for item in consumers %}
+        {% for item in discount %}
         <tr>
-          <td>{{ item.name }}</td>
-          <td>{{ item.document }}</td>
-          <td>{{ item.zip_code }}</td>
-          <td>{{ item.city }}</td>
-          <td>{{ item.state }}</td>
-          <td>{{ item.consumption }}</td>
-          <td>{{ item.distributor_tax }}</td>
+          <td>{{ item.consumer.name }}</td>
+          <td>{{ item.consumer.document }}</td>
+          <td>{{ item.consumer.city }}</td>
+          <td>{{ item.consumer.state }}</td>
+          <td>{{ item.consumption_range }} kWh</td>
+          <td>{{ item.consumer_type }}</td>
+          <td>{{ item.cover_value }}%</td>
+          <td>{{item.distributor_tax}}</td>
+          <td>R${{ item.discount_value }}</td>
         </tr>
         {% endfor %}
       </tbody>

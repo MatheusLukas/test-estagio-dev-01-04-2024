@@ -2,13 +2,17 @@ def calculator(consumption: list, distributor_tax: float, tax_type: str) -> tupl
     """
     returns a tuple of floats contained anual savings, monthly savings, applied_discount and coverage
     """
+    print("===================================")
+    print(consumption, distributor_tax, tax_type, "Consumo, Taxa e Tipo de imposto")
+
+
+
     annual_savings = 0
     monthly_savings = 0
     applied_discount = 0
     coverage = 0
 
     average_consumption = sum(consumption) / len(consumption)
-
     discounts = {
         'Residencial': [0.18, 0.22, 0.25],
         'Comercial': [0.16, 0.18, 0.22],
@@ -16,7 +20,7 @@ def calculator(consumption: list, distributor_tax: float, tax_type: str) -> tupl
     }
     
     if average_consumption < 10000:
-        discount_rate = discounts[tax_type][0]
+        discount_rate = discounts[tax_type][0] 
         coverage = 0.9
     elif 10000 <= average_consumption <= 20000:
         discount_rate = discounts[tax_type][1]
@@ -24,10 +28,12 @@ def calculator(consumption: list, distributor_tax: float, tax_type: str) -> tupl
     else:
         discount_rate = discounts[tax_type][2]
         coverage = 0.99
-    
-    monthly_consumption_covered = average_consumption * coverage
+
+
+    monthly_consumption_covered = average_consumption * coverage 
     monthly_savings = monthly_consumption_covered * distributor_tax * discount_rate
-    annual_savings = monthly_savings * 12
+    annual_savings = monthly_savings * 12 
+
 
     return (
         round(annual_savings, 2),

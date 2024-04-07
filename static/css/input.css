@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input,
+select {
+  @apply border-2 border-secondary rounded-md p-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary text-black;
+}
+
+p {
+  @apply text-xl;
+}

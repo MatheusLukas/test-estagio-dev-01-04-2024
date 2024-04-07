@@ -1,3 +1,20 @@
+### HOW TO RUN SETUP PROJECT TAILWIND
+
+##### 1 - How to install NPM
+
+[Node.js Setup](https://nodejs.org/en/download)
+
+##### 2 - Open other terminal and execute:
+
+`npm install`
+`npm run dev`
+
+##### 3 - How i implemented Tailwind with Django:
+
+[Documentation Link](https://dev.to/jazzdev/setting-up-tailwindcss-with-django-easy-guide-2o6j)
+
+<hr>
+
 <p style="text-align:center" dir="auto">
   <a href="#orientacoes">Orientações</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -41,26 +58,25 @@ Uma empresa de assinatura de energia está interessada em criar uma calculadora 
 
 #### A empresa de assinatura de energia te forneceu as seguintes premissas para o desconto:
 
-| Consumo (Média) | Desconto (Residencial) | Desconto (Comercial) | Desconto (Industrial) |
-| --- | --- | --- | --- |
-| < 10.000 kWh | 18% | 16% | 12% |
-| >= 10.000 kWh e <= 20.000 kWh | 22% | 18% | 15% |
-| > 20.000 kWh | 25% | 22% | 18% |
+| Consumo (Média)               | Desconto (Residencial) | Desconto (Comercial) | Desconto (Industrial) |
+| ----------------------------- | ---------------------- | -------------------- | --------------------- |
+| < 10.000 kWh                  | 18%                    | 16%                  | 12%                   |
+| >= 10.000 kWh e <= 20.000 kWh | 22%                    | 18%                  | 15%                   |
+| > 20.000 kWh                  | 25%                    | 22%                  | 18%                   |
 
 #### Alem disso, deve-se considerar os seguintes percentuais de cobertura baseado no consumo:
 
 | Consumo (Média) - kWh | < 10.000 kWh | >= 10.000 kWh e <= 20.000 kWh | > 20.000 kWh |
-| --- | --- | --- | --- |
-| Cobertura*** | 90% | 95% | 99% |
+| --------------------- | ------------ | ----------------------------- | ------------ |
+| Cobertura\*\*\*       | 90%          | 95%                           | 99%          |
 
-*** Cobertura é o valor da energia que o consumidor irá receber da empresa de assinatura de energia em relação à energia consumida
+\*\*\* Cobertura é o valor da energia que o consumidor irá receber da empresa de assinatura de energia em relação à energia consumida
 
 ### Requisitos Etapa 1:
 
 1. A calculadora terá que ser desenvolvida no arquivo calculator_python.py dentro da função calculator();
 2. Todos os testes presentes no arquivo calculator_python.py precisam ser executados sem erros;
 3. Deverá ser utilizado o framework Django para fazer a integração entre a calculadora e a interface que você deve desenvolver.
-
 
 <hr>
 <h2 id="etapa-2" style="text-align:center;border-bottom:none">Etapa 2</h2>
